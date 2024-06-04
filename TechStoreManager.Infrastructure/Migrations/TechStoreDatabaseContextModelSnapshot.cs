@@ -22,7 +22,7 @@ namespace TechStoreManager.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("TechStoreManager.Domain.Device", b =>
+            modelBuilder.Entity("TechStoreManager.Domain.DeviceDTO", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,7 +102,7 @@ namespace TechStoreManager.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TechStoreManager.Domain.Device", b =>
+            modelBuilder.Entity("TechStoreManager.Domain.DeviceDTO", b =>
                 {
                     b.HasOne("TechStoreManager.Domain.Store", "Store")
                         .WithMany("Devices")

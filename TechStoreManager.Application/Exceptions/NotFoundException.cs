@@ -2,7 +2,7 @@ namespace TechStoreManager.Application.Exceptions;
 
 public class NotFoundException : Exception
 {
-    public NotFoundException(string name, object? key) : base($"{name} ({key}) was not found")
+    public NotFoundException(object name) : base($"{name} was not found")
     {
             
     }

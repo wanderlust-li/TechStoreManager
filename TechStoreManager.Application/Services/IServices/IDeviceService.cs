@@ -7,6 +7,7 @@ public interface IDeviceService
 {
     Task<int> AddDeviceAsync(CreateDeviceDTO device);
     Task<Device> GetDeviceByIdAsync(int deviceId);
-
     Task<List<Device>> GetAllDevice();
+    Task<int> DeleteDeviceById(int id);
+    Task<int> UpdateDeviceById(EditDeviceDTO editDeviceDto);
 }

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TechStoreManager.Application.Models.Device;
 using TechStoreManager.Application.Services.IServices;
-using TechStoreManager.Domain;
 
 namespace TechStoreManager.API.Controllers;
 
@@ -32,5 +31,17 @@ public class DeviceController : ControllerBase
     public async Task<IActionResult> GetAllDevice()
     {
         return Ok(await _deviceService.GetAllDevice());
+    }
+
+    [HttpDelete("delete-device-by-id")]
+    public async Task<IActionResult> DeleteDeviceById(int id)
+    {
+        return Ok(await _deviceService.DeleteDeviceById(id));
+    }
+
+    [HttpPut("update-device-by-id")]
+    public async Task<IActionResult> UpdateDeviceById(EditDeviceDTO editDeviceDto)
+    {
+        return Ok(await _deviceService.UpdateDeviceById(editDeviceDto));
     }
 }

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TechStoreManager.Application.DTO.StoreDTO;
 using TechStoreManager.Application.Services.IServices;
 
 namespace TechStoreManager.API.Controllers;
@@ -18,5 +19,11 @@ public class StoreController : Controller
     public async Task<IActionResult> GetAllStore()
     {
         return Ok(await _storeService.GetAllStore());
+    }
+
+    [HttpPost("create-store")]
+    public async Task<IActionResult> CreateStore(CreateStoreDTO createStoreDto)
+    {
+        return Ok(await _storeService.CreateStore(createStoreDto));
     }
 }
