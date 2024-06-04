@@ -4,7 +4,7 @@ using TechStoreManager.Domain;
 
 namespace TechStoreManager.Infrastructure.DatabaseContext;
 
-public class TechStoreDatabaseContext : IdentityDbContext<User>
+public class TechStoreDatabaseContext : DbContext
 {
     public TechStoreDatabaseContext(DbContextOptions<TechStoreDatabaseContext> options) : base(options) {}
     
