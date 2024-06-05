@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechStoreManager.Infrastructure.DatabaseContext;
 
@@ -11,9 +12,11 @@ using TechStoreManager.Infrastructure.DatabaseContext;
 namespace TechStoreManager.Infrastructure.Migrations
 {
     [DbContext(typeof(TechStoreDatabaseContext))]
-    partial class TechStoreDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20240605081158_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -253,40 +256,6 @@ namespace TechStoreManager.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "8e445865-a24d-4543-a6c6-9443d048cdb9",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "53a9fa62-d487-4121-928a-aefd19b33020",
-                            Email = "admin@localhost.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@LOCALHOST.COM",
-                            NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEL06ie1UbKVi83gNoGstmsmJaoZ4LCKTDP6zBBM6b0qVtDLGsE6dVyCe42BSWO5EQw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "95679443-63a0-48fa-b0c5-9da5172284c8",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@localhost.com"
-                        },
-                        new
-                        {
-                            Id = "9e224968-33e4-4652-b7b7-8574d048cdb9",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "bc9ac32f-3586-482c-b3d8-a586dd8cc7d0",
-                            Email = "user@localhost.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "USER@LOCALHOST.COM",
-                            NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFgd8/kuONV32BlKdR9qIle8Pq1x3E+xbCSsr4QH4N3Wg+28zfS1K6RqdZ4/r+iZ3g==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "3fb8b8fe-0c2a-47bb-a7d7-4bdda2c605f6",
-                            TwoFactorEnabled = false,
-                            UserName = "user@localhost.com"
-                        });
                 });
 
             modelBuilder.Entity("TechStoreManager.Domain.Store", b =>
@@ -319,16 +288,16 @@ namespace TechStoreManager.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2024, 6, 5, 11, 17, 8, 424, DateTimeKind.Local).AddTicks(1250),
-                            DateModified = new DateTime(2024, 6, 5, 11, 17, 8, 424, DateTimeKind.Local).AddTicks(1250),
+                            DateCreated = new DateTime(2024, 6, 5, 11, 11, 57, 850, DateTimeKind.Local).AddTicks(6610),
+                            DateModified = new DateTime(2024, 6, 5, 11, 11, 57, 850, DateTimeKind.Local).AddTicks(6610),
                             Location = "Kyiv",
                             Name = "Rozetka"
                         },
                         new
                         {
                             Id = 2,
-                            DateCreated = new DateTime(2024, 6, 5, 11, 17, 8, 424, DateTimeKind.Local).AddTicks(1260),
-                            DateModified = new DateTime(2024, 6, 5, 11, 17, 8, 424, DateTimeKind.Local).AddTicks(1260),
+                            DateCreated = new DateTime(2024, 6, 5, 11, 11, 57, 850, DateTimeKind.Local).AddTicks(6620),
+                            DateModified = new DateTime(2024, 6, 5, 11, 11, 57, 850, DateTimeKind.Local).AddTicks(6620),
                             Location = "Lviv",
                             Name = "Hotline"
                         });

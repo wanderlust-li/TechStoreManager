@@ -6,4 +6,5 @@ public class CreateDeviceDTO
     public string Description { get; set; }
     public decimal Price { get; set; }
     public int? StoreId { get; set; }
+    public DateTime DateCreated { get; set; }
 }

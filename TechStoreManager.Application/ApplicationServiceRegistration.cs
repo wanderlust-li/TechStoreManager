@@ -11,6 +11,7 @@ public static class ApplicationServiceRegistration
     {
         services.AddScoped<IStoreService, StoreService>();
         services.AddScoped<IDeviceService, DeviceService>();
+        services.AddScoped<IAuthService, AuthService>();
         
         return services;
     }

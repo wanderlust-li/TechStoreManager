@@ -23,19 +23,21 @@ public class DeviceService : IDeviceService
         {
             await connection.OpenAsync();
             var sql = @"
-                INSERT INTO Devices (Name, Description, Price, StoreId)
-                VALUES (@Name, @Description, @Price, @StoreId);
-                SELECT CAST(SCOPE_IDENTITY() as int);
-            ";
+            INSERT INTO Devices (Name, Description, Price, StoreId, DateCreated)
+            VALUES (@Name, @Description, @Price, @StoreId, GETDATE());
+            SELECT CAST(SCOPE_IDENTITY() as int);
+        ";
             return await connection.ExecuteAsync(sql, new
             {
                 Name = deviceDto.Name,
                 Description = deviceDto.Description,
                 Price = deviceDto.Price,
-                StoreId = deviceDto.StoreId
+                StoreId = deviceDto.StoreId,
+                DateCreated = DateTime.Now
             });
         }
     }
+
     
     public async Task<Device> GetDeviceByIdAsync(int deviceId)
     {
